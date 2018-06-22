@@ -27,12 +27,13 @@ contract ContratoPrevidenciario {
         planoPrevidenciario = msg.sender;
     }
     
-    //
+    //Somente o plano pode matricular um participante... Ou não ? O participante pode se automatricular ? A decidir...
     function MatriculaParticipante (address participante, uint age, string name) {
         if (msg.sender != planoPrevidenciario) return;
         participantesPlano[participante].statusPrimario = "Ativo";
         participantesPlano[participante].idade = age;
         participantesPlano[participante].nome = name;
+        //participantesPlano[participante].saldoParticipante = 0; Ver melhor esta linha...
     }
     
     //função para comparar duas strings pelo hash, retorna true se forem diferentes

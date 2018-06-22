@@ -57,7 +57,7 @@ contract ContratoPrevidenciario {
     
     //função teste de pegar nome ( orientação a objetos feelings =( )
     function getName (address participante) returns (string) {
-        return participantesPlano[participante].nome;
+       return participantesPlano[participante].nome;
     }
     
 }

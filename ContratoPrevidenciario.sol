@@ -48,13 +48,12 @@ contract ContratoPrevidenciario {
     //criação do contrato previdenciario - constructor 
     
      constructor  (uint _cpfParticipante, uint _idadeEntradaParticipante, 
-    uint _idadeSaidaParticipante) returns ( bool success) {
+    uint _idadeSaidaParticipante){
         
         participante.cpf = _cpfParticipante;
         participante.idadeEntrada = _idadeSaidaParticipante;
         participante.idadeSaida = _idadeEntradaParticipante;
-        participante.enderecoParticipante = _enderecoParticipante;
-        success = true;
+        
     }
     
 }

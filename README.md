@@ -2,12 +2,12 @@
 Segurança em Computação 
 
 Smart Prev.
-Trabalho em desenvolvimento. 
-Linguagem: Solidity.
+Trabalho visando a utilização dos conceitos associados a Smart Contracts/Block Chain/Crypto Currencies. 
 Tema: Previdência Complementar Privada.
+Linguagem: Solidity versão 0.4.18.
 
-Projeto ainda em desenvolvimento, Professor. :D
-
-Por favor, corrigir somente após o dia 24/06 (domingo).
-
-Desde já, agradeço. <3
+Ferramentas uitlizadas:
+-Truffle versão 
+-Ganache
+-Metamask
+-Remix IDE

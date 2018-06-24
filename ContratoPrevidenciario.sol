@@ -3,9 +3,9 @@ pragma solidity ^0.4.11;
 contract ContratoPrevidenciario {
     
     address owner = msg.sender;
-    mapping (address => contribuicoesInvalidez) planoInvalidez;
-    mapping (address => contribuicoesEducacionais) planoEducacional;
     mapping (address => contribuicoesNormais) planoNormal;
+    //mapping (address => contribuicoesInvalidez) planoInvalidez;
+    //mapping (address => contribuicoesEducacionais) planoEducacional;
     mapping (address => Participante) participantes;
     string statusContrato;
     uint256 saldoTotalCarteira;
@@ -63,7 +63,7 @@ contract ContratoPrevidenciario {
     }
    
     
-    function realizaContribuicaoNormal (uint256 _valor) {
+    function realizaContribuicaoNormal (uint256 _valor) payable  {
     
         if (stringsDiferentes(statusContrato, "cold")) {
             
@@ -79,12 +79,28 @@ contract ContratoPrevidenciario {
             
         }
         
+        if (saldoTotalCarteira > 20 ether) {
+            statusContrato = "cold";
+        }
+        
     }
+    
+     function realizaResgate () public onlyOwner(owner) {
+        uint256 valorPagar = participantes[msg.sender].saldoTotalParticipante;
+        address enderecoWallerParticipante = msg.sender;
+        //msg.sender.call.gas(valorpagar);
+
+    }
+    
     
      
      function getStatusContrato () returns (string ) {
             statusContrato;
     }
+    
+     function setStatusContrato (string _newStatus) onlyOwner(owner) {
+            statusContrato = _newStatus;
+     }
     
      function getOwner () returns (address ) {
             owner;
